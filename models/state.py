@@ -22,7 +22,7 @@ class State(BaseModel, Base):
         def cities(self):
             cities_list = []
             all_cities = models.storage.all(City).values()
-            for cit in all_cities:
-                if cit.state_id == self.id:
-                    cities_list.append(cit)
+            for city in all_cities:
+                if city.state_id == self.id:
+                    cities_list.append(city)
             return cities_list

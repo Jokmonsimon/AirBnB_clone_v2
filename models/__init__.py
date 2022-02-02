@@ -2,7 +2,7 @@
 """
 Este módulo crea una instancia de un objeto de clase FileStorage
 """
-from models.base_model import BaseModel, Base
+# from models.base_model import BaseModel, Base
 from os import getenv
 
 

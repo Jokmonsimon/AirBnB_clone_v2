@@ -6,7 +6,7 @@ from sqlalchemy import Column, String
 import models
 
 
-class Review(BaseModel):
+class Review(BaseModel, Base):
     """ Review classto store review information """
     if models.is_type == 'db':
         __tablename__ = 'reviews'

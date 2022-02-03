@@ -12,10 +12,10 @@ if models.is_type == "db":
     relationship_table = Table('place_amenity', Base.metadata,
                                Column('place_id', String(60),
                                       ForeignKey('places.id'),
-                                      primary_key=True),
+                                      nullable=False),
                                Column('amenity_id', String(60),
                                       ForeignKey('amenities.id'),
-                                      primary_key=True))
+                                      nullable=False))
 
 
 class Place(BaseModel, Base):
@@ -32,7 +32,7 @@ class Place(BaseModel, Base):
     latitude = Column(Float)
     longitude = Column(Float)
     reviews = relationship('Review', backref='place', cascade='delete')
-    amenities = relationship('Amenity', secondary='place_amenity',
+    amenities = relationship('Amenity', secondary=relationship_table,
                              viewonly=False)
     amenity_ids = []
 

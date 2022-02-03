@@ -47,7 +47,7 @@ class DBStorage:
             data_list.extend(self.__session.query(State))
             data_list.extend(self.__session.query(User))
         else:
-            data_list = data_list = self.__session.query(cls)
+            data_list = self.__session.query(cls)
         return {'{}.{}'.format(type(obj).__name__, obj.id): obj
                 for obj in data_list}
 

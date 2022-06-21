@@ -5,6 +5,7 @@ from datetime import datetime
 from fabric.api import env, local, put, run, runs_once
 
 
+<<<<<<< HEAD
 env.hosts = ["34.73.0.174", "35.196.78.105"]
 """The list of host server IP addresses."""
 
@@ -31,6 +32,10 @@ def do_pack():
     except Exception:
         output = None
     return output
+=======
+env.hosts = ['44.197.209.145', '3.239.89.107']
+env.user = "ubuntu"
+>>>>>>> 55b1f1f3e3b4886495487fab9b780b1466dde8b8
 
 
 def do_deploy(archive_path):
